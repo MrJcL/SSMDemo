@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jc.dao.brand.BsdBrandDao">
+	<!-- <resultMap id="bsdBrand" type="BsdBrand">
+		<id property="brand_id" column="brandId" />
+		<result column="brand_name" property="brandName" />
+		<result column="brand_no" property="brandNo" />
+	</resultMap> -->
+	<select id="getBrand" resultType="BsdBrand" parameterType="String">
+		select
+		bb.brand_id,
+		bb.brand_no,
+		bb.brand_name
+		from bsd_brand bb
+		where bb.brand_id = #{Id}
+	</select>
+</mapper>
